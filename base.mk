@@ -240,7 +240,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += phh-ota
 
 PRODUCT_PACKAGES += \
-    xiaomi-touch
+	xiaomi-touch
+
+PRODUCT_PACKAGES += \
+	android.hardware.vibrator@1.3-service.meizu
 
 PRODUCT_COPY_FILES += \
 	frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration_7_0.xml:system/etc/a2dp_audio_policy_configuration_7_0.xml \
