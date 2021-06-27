@@ -400,6 +400,12 @@ if [ "$foundFingerprint" = false ];then
     mount -o bind system/phh/empty /system/etc/permissions/android.hardware.fingerprint.xml
 fi
 
+if ! getprop ro.vendor.build.fingerprint | grep -qE 'meizu_18'; then
+    mount -o bind system/phh/empty /system/bin/hw/android.hardware.vibrator@1.3-service.meizu
+    mount -o bind system/phh/empty /system/etc/init/android.hardware.vibrator@1.3-service.meizu.rc
+    mount -o bind system/etc/vintf/manifest/manifest_dummy.xml /system/etc/vintf/manifest/android.hardware.vibrator@1.3-service.meizu.xml
+fi
+
 if ! grep android.hardware.bluetooth /vendor/manifest.xml && ! grep android.hardware.bluetooth /vendor/etc/vintf/manifest.xml; then
     mount -o bind system/phh/empty /system/etc/permissions/android.hardware.bluetooth.xml
     mount -o bind system/phh/empty /system/etc/permissions/android.hardware.bluetooth_le.xml
