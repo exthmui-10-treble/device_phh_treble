@@ -18,7 +18,9 @@ PRODUCT_COPY_FILES += \
     device/phh/treble/bluetooth/audio/config/sysbta_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration_7_0.xml
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/phh/treble/sepolicy
-PRODUCT_PACKAGE_OVERLAYS += device/phh/treble/overlay
+PRODUCT_PACKAGE_OVERLAYS += \
+    device/phh/treble/overlay \
+	device/phh/treble/overlay-miku
 
 $(call inherit-product, vendor/hardware_overlay/overlay.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
