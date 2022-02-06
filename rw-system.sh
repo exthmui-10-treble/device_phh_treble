@@ -844,7 +844,7 @@ if [ -c /dev/dsm ];then
 
     mkdir -p /data/sec_storage_data
     chown system:system /data/sec_storage_data
-    chcon -R u:object_r:teecd_data_file:s0 /data/sec_storage_data
+    chcon -R u:object_r:teecd_data_file_system:s0 /data/sec_storage_data
 
     if mount | grep -q " on /sec_storage " ; then
         # /sec_storage is already mounted by the vendor, don't try to create and mount it
@@ -852,12 +852,12 @@ if [ -c /dev/dsm ];then
         # the fingerprint daemon (running as system) cannot access it.
         chown -R system:system /sec_storage
         chmod -R 0660 /sec_storage
-        chcon -R u:object_r:teecd_data_file:s0 /sec_storage
+        chcon -R u:object_r:teecd_data_file_system:s0 /sec_storage
     else
         # No /sec_storage provided by vendor, mount /data/sec_storage_data to it
         mount /data/sec_storage_data /sec_storage
         chown system:system /sec_storage
-        chcon u:object_r:teecd_data_file:s0 /sec_storage
+        chcon u:object_r:teecd_data_file_system:s0 /sec_storage
     fi
 fi
 
