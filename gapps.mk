@@ -42,11 +42,18 @@ $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 endif
 
 #Pixel Experience gapps
-ifneq ($(wildcard vendor/gapps),)
-IS_PHONE := true
-$(call inherit-product,vendor/gapps/config.mk)
-PRODUCT_PACKAGES += \
-       phh-overrides \
-	   com.simplemobiletools.gallery.pro \
+#ifneq ($(wildcard vendor/gapps),)
+#IS_PHONE := true
+#$(call inherit-product,vendor/gapps/config.mk)
+#PRODUCT_PACKAGES += \
+#       phh-overrides \
+#	   com.simplemobiletools.gallery.pro \
+#
+#endif
 
+#Miku UI Gapps
+ifneq ($(wildcard vendor/gms),)
+$(call inherit-product, vendor/gms/gms.mk)
+PRODUCT_PACKAGES += \
+    phh-overrides
 endif
