@@ -173,9 +173,6 @@ PRODUCT_PACKAGES += \
 	oneplus-motor
 
 PRODUCT_PACKAGES += \
-	Stk
-
-PRODUCT_PACKAGES += \
 	resetprop_phh
 
 PRODUCT_COPY_FILES += \
