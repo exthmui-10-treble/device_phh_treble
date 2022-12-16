@@ -1,7 +1,6 @@
 $(call inherit-product, vendor/vndk/vndk.mk)
 $(call inherit-product, device/phh/treble/base.mk)
 $(call inherit-product, vendor/exthm/config/common_full_phone.mk)
-$(call inherit-product, device/lineage/sepolicy/common/sepolicy.mk)
 
 include build/make/target/product/aosp_arm64_ab.mk
 
