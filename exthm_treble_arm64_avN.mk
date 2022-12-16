@@ -17,3 +17,6 @@ PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS :=
 # PHH "secure"
 PRODUCT_COPY_FILES += \
     device/phh/treble/empty:$(TARGET_COPY_OUT_SYSTEM)/etc/phh-secure
+
+# Faceunlock
+TARGET_FACE_UNLOCK := true
