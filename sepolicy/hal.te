@@ -8,3 +8,5 @@ init_daemon_domain(hal_fingerprint_oppo_compat)
 
 type hal_fingerprint_oppo, domain;
 allow hal_fingerprint_oppo vendor_default_prop:property_service { set };
+
+allow cameraserver default_android_hwservice:hwservice_manager { find };
