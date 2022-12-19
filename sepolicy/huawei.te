@@ -15,3 +15,7 @@ type oeminfo_nvm_device, file_type;
 allowxperm oeminfo_nvm oeminfo_nvm_device:blk_file ioctl { 0x1260 };
 
 allow charger rootfs:file { ioctl read getattr lock map execute entrypoint open };
+
+type cameradaemon_prop, property_type;
+allow platform_app cameradaemon_prop:file { open read getattr };
+allow system_server cameradaemon_prop:file { open read getattr };
