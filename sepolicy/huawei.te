@@ -19,3 +19,4 @@ allow charger rootfs:file { ioctl read getattr lock map execute entrypoint open 
 type cameradaemon_prop, property_type;
 allow platform_app cameradaemon_prop:file { open read getattr };
 allow system_server cameradaemon_prop:file { open read getattr };
+allow platform_app unlabeled:dir { search };
