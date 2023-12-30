@@ -20,3 +20,6 @@ else
 PRODUCT_PACKAGES += \
     Via
 endif
+
+# Partitions
+BOARD_EXT4_SHARE_DUP_BLOCKS := true
